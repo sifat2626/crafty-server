@@ -23,6 +23,7 @@ exports.getAllCrafts = async (req, res) => {
     const craft = await Craft.find();
     res.status(200).json({
       status: "success",
+      results: craft.length,
       data: {
         craft,
       },

@@ -9,7 +9,12 @@ const morgan = require("morgan");
 const cors = require("cors");
 
 // middlewares
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://travel-guru-a9df2.web.app",
+        "http://localhost:5173"
+    ]
+}));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
