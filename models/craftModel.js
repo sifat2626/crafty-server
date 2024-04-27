@@ -59,10 +59,7 @@ const craftSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    add_button: {
-      type: Boolean,
-      required: true,
-    },
+    
   },
   { timestamps: true, versionKey: false }
 );

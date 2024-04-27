@@ -2,6 +2,7 @@ const Craft = require("../models/craftModel");
 
 exports.createCraft = async (req, res) => {
   try {
+    console.log('create')
     const craft = await Craft.create(req.body);
     res.status(201).json({
       status: "success",
