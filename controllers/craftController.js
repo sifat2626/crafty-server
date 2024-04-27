@@ -55,6 +55,25 @@ exports.getCraft = async (req, res) => {
     });
   }
 };
+exports.getCraftsByEmail = async (req, res) => {
+  try {
+    const {user_email} = req.body;
+    const craft = await Craft.find({user_email})
+    res.status(200).json({
+      status: "success",
+      results:craft.length,
+      data: {
+        craft,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      status: "fail",
+      data: error.message,
+    });
+  }
+};
 
 exports.updateCraft = async (req, res) => {
   try {
