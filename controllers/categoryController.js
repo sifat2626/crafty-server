@@ -52,6 +52,7 @@ exports.getCraftByCategory = async (req, res) => {
     const craft = await Craft.find({ subcategory_name: name });
     res.status(200).json({
       status: "success",
+      results:craft.length,
       data: {
         craft,
       },
